@@ -1,7 +1,5 @@
-@use './variables' as *;
+@use 'fonts';
+@use 'base';
+@use './modules/header';
 
-
-body {
-   background-color: $bg;
-   color: $dark;
-}
+@import 'normalize.css';
