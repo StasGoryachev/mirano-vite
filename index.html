@@ -30,5 +30,65 @@
 			<button class="header__cart-button">0</button>
 		</div>
 	</header>
+
+   <main>
+      <section class="hero">
+         <div class="hero__container container">
+            <div class="hero__head-group">
+					<h1 class="hero__title">Авторские букеты</h1>
+					<p class="hero__subtitle">и подарки</p>
+				</div>
+            <figure class="hero__group-image">
+					<img class="hero__image hero__image_left" src="/img/hero-left.jpg" alt="Букет ярко оранжевых цветов в банке">
+					<svg class="hero__image hero__image_center" role="img" aria-label="Букет нежно розовых цветов в вазе" width="680" height="588" viewBox="0 0 680 588" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice">
+						<clippath id="hero">
+							<path d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z" />
+						</clippath>
+						<image xlink:href="/img/hero.jpg" width="100%" height="100%" clip-path="url(#hero)" preserveAspectRatio="xMidYMid slice" />
+					</svg>
+					<img class="hero__image hero__image_right" src="/img/hero-right.jpg" alt="Букет розовых и белых цветов в вазе">
+				</figure>
+         </div>  
+      </section> 
+      <section class="filter">
+
+			<h2 class="visually-hidden"></h2>
+         <input class="CLIPBOARD__radio" id="TM_SELECTED_TEXT" type="radio" name="type" value="flower" checked>
+         <label class="CLIPBOARD__label filter__label_flowers" for="TM_SELECTED_TEXT"></label>
+			<div class="container filter__container">
+				<fieldset class="filter__group">
+					<input class="filter__radio" id="flower" type="radio" name="type" value="flower" checked>
+					<label class="filter__label filter__label_flowers" for="flower">Цветы</label>
+					<input class="filter__radio" id="toys" type="radio" name="type" value="toys">
+					<label class="filter__label filter__label_toys" for="toys">Игрушки</label>
+					<input class="filter__radio" id="postcard" type="radio" name="type" value="postcard">
+					<label class="filter__label filter__label_postcard" for="postcard">Открытки</label>
+				</fieldset>
+				<fieldset class="filter__group filter__group_choices">
+					<div class="filter__choices choices">
+						<button class="filter__select choices__btn">Цена</button>
+						<div class="choices__box">
+							<fieldset class="filter__group">
+								<input class="filter__input-price" type="text" placeholder="от">
+								<input class="filter__input-price" type="text" placeholder="до">
+							</fieldset>
+						</div>
+					</div>
+					<div class="filter__choices choices">
+						<button class="filter__select choices__btn">Тип товара</button>
+						<div class="choices__box">
+							<ul class="filter__type_list">
+								<li class="filter__type_item"><button class="filter__type_button">Монобукеты</button></li>
+								<li class="filter__type_item"><button class="filter__type_button">Авторские букеты</button></li>
+								<li class="filter__type_item"><button class="filter__type_button">Цветы в коробке</button></li>
+								<li class="filter__type_item"><button class="filter__type_button">Цветы в корзине</button></li>
+								<li class="filter__type_item"><button class="filter__type_button">Букет из сухоцветов</button></li>
+							</ul>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</section>
+   </main>
   </body>
 </html>
