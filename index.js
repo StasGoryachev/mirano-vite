@@ -25,6 +25,16 @@ window.addEventListener("scroll", (e) => {
 const adjustElementPosition = (el) => {
   const rect = el.getBoundingClientRect();
   console.log("adjustElementPosition ~ rect:", rect);
+  const viewportWidth = window.innerWidth;
+  console.log("adjustElementPosition ~ viewportWidth:", viewportWidth)
+  if(rect.left < 0) {
+   console.log('выпал влево')
+  }
+
+  if(rect.right > viewportWidth) {
+    console.log('выпал вправо')
+  }
+  
 };
 
 const choices = document.querySelectorAll(".choices");
