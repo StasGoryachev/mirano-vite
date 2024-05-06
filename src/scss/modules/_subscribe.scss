@@ -49,6 +49,15 @@
       &:placeholder {
          color: rgba($dark, 0.3);
       }
+
+      &:hover {
+         background-color: $footer;
+      }
+
+      &:focus,
+      &:focus-visible {
+         outline: 1px solid $light-orange;
+      }
    }
 
    &__search-button {
@@ -58,12 +67,29 @@
       bottom: 0;
       width: 40px;
       height: 40px;
-      // чтоб стрелочку отцентровать:
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: $light-orange;
+      outline: 1px solid transparent;
       border-radius: 32px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+         background-color: $orange;
+      }
+
+      &:focus,
+      &:focus-visible {
+         background-color: $orange;
+         border-color: $light-orange;
+         outline: 1px solid $light-orange;
+      }
+
+      &:disabled {
+         background-color: $light-orange;
+         opacity: 0.4;
+      }
    }
 
 }

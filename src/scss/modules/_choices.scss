@@ -1,9 +1,20 @@
 @use '../variables'as *;
+@use '../media'as *;
+
 .choices {
 
    &__btn {
+      &_open {
+         &.filter__select::after {
+            transform: scale(-1);
+         }
+      }
    }
 
    &__box {
+      display: none;
+      &_open {
+         display: block;
+      }
    }
 }
