@@ -3,27 +3,51 @@
 
 
 .cart {
-
+   align-self: start;
    padding-top: 100px;
+   display:none;
+
+   &_open {
+      display: flex;
+   }
+
+   @media (max-width: 1360px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+      overflow-y: auto;
+      z-index: 999;
+      height: 100vh;
+    }
+
+    @include mobile {
+      height: auto;
+      right: 14px;
+   }
 
    &__container {
       padding: 24px 16px;
       border-radius: 32px;
       background-color: $white;
-      max-height: 778px;
+      min-height: 778px;
+      max-width: 310px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-  
-      @media (max-width: 1360px) {
-        max-height: none;
-      }
-  
-      @include mobile {
-        border-radius: 24px;
-      }
-    }
 
+      @media (max-width: 1360px) {
+         height: 100%;
+      }
+
+      @include mobile {
+         min-height: auto;
+         border-radius: 24px;
+         max-width: 292px;
+      }
+   }
+   
    &__header {
       display: flex;
       align-items: center;
@@ -40,9 +64,9 @@
    &__close {
       color: $orange;
       transition: color .2s;
-  
+
       &:hover {
-        color: $light-orange;
+         color: $light-orange;
       }
    }
 
@@ -68,17 +92,23 @@
    }
 
    &__item {
-      display: grid;
-      gap: 8px 12px;
       padding: 16px 0;
+      display: grid;
+      gap: 16px 12px;
+      align-items: center;
       border-bottom: 1px solid rgba($dark, .04);
       grid-template-columns: 54px 1fr min-content;
       grid-template-areas:
          "image title title "
          "image counter price";
+
+      &:last-child {
+         border-bottom-color: transparent;
+      }
    }
 
    &__image {
+      align-self: start;
       grid-area: image;
       width: 54px;
       height: 54px;
@@ -121,11 +151,21 @@
    &__counter-input {
       width: 30px;
       border: none;
-      outline: none;
+      outline: 1px solid transparent;
       text-align: center;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+         appearance: none;
+         margin: 0;
+      }
 
       &:hover {
          background-color: $footer;
+      }
+
+      &:focus-visible {
+         outline-color: $dark;
       }
    }
 
