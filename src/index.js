@@ -1,16 +1,14 @@
 import "@/scss/index.scss";
 import { initHeaderFixed } from "@/scripts/headerFixed";
 import { initChoices } from "@/scripts/choices";
-import { initCart } from "./scripts/cart";
-
-
-
-
+import { initCart } from "@/scripts/cart";
+import { renderProducts } from "@/scripts/renderProducts";
 
 const init = () => {
-  initHeaderFixed()
+  initHeaderFixed();
   initChoices();
-  initCart()
-}
+  initCart();
+  renderProducts();
+};
 
-init()
+init();

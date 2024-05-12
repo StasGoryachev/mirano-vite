@@ -10,5 +10,8 @@ export const initCart = () => {
       cart.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-  headerCartBtn.addEventListener("click", toggleCart)
+  headerCartBtn.addEventListener("click", toggleCart);
+  cartClose.addEventListener("click", (e) => {
+    cart.classList.remove("cart_open");
+  });
 };

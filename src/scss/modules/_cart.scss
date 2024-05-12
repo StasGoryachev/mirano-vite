@@ -3,8 +3,30 @@
 
 
 .cart {
+   display: none;
    align-self: start;
    padding-top: 100px;
+
+   &_open {
+      display: flex;
+   }
+
+
+   @media (max-width: 1360px) {
+      padding: 0;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      height: 100vh;
+   }
+
+   @include mobile {
+      height: auto;
+      right: 14px;
+   }
 
    &__container {
       padding: 24px 16px;
@@ -26,7 +48,7 @@
          max-width: 292px;
       }
    }
-   
+
    &__header {
       display: flex;
       align-items: center;
