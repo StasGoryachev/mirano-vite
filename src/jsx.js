@@ -1,5 +1,5 @@
 export default function jsx(tag, attributes = {}, ...children) {
-  console.log(tag, attributes, children);
+//   console.log(tag, attributes, children);
 
   if (typeof tag === "function") {
     return tag(attributes, ...children);
