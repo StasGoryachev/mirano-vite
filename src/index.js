@@ -4,17 +4,19 @@ import { initChoices } from "@/scripts/choices";
 import { initCart } from "@/scripts/cart";
 import { renderProducts } from "@/scripts/renderProducts";
 import { store } from "./scripts/Store";
+import { fetchProducts } from "./scripts/APi";
 
 const init = () => {
   initHeaderFixed();
   initChoices();
   initCart();
-  renderProducts();
+//   fetchProducts({type: "toys"});
+// fetchProducts({type: "bouquets"});
+fetchProducts();
+renderProducts();
 };
 
 init();
 
-
-
-store
-console.log("store:", store)
+store;
+console.log("store:", store);
