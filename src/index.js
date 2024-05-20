@@ -5,15 +5,17 @@ import { initCart } from "@/scripts/cart";
 import { renderProducts } from "@/scripts/renderProducts";
 import { store } from "./scripts/Store";
 import { fetchProducts } from "./scripts/APi";
+import { initChoicesType } from "./scripts/choicesType";
+import { filterProducts } from "./scripts/filterProducts";
 
 const init = () => {
   initHeaderFixed();
   initChoices();
+  initChoicesType()
   initCart();
-//   fetchProducts({type: "toys"});
-// fetchProducts({type: "bouquets"});
-fetchProducts();
-renderProducts();
+  fetchProducts();
+  renderProducts();
+  filterProducts()
 };
 
 init();

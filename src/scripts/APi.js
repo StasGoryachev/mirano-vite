@@ -13,15 +13,19 @@ const formatQueryString = (params) => {
 
   Object.entries(params).forEach(([key, value]) => {
     searchParams.append(key, value);
-
-    return `?${searchParams.toString()}`;
-  });
+   });
+   
+   return `?${searchParams.toString()}`;
 };
+
+
 export const API_URL = "http://localhost:3000";
 
 export const fetchProducts = async (params = {}) => {
   try {
-    const response = await fetch(`${API_URL}/api/products${formatQueryString(params)}`);
+    const response = await fetch(
+      `${API_URL}/api/products${formatQueryString(params)}`,
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

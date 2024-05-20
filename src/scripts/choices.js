@@ -74,5 +74,6 @@ export const initChoices = () => {
     window.addEventListener('resize', debounce((e) => {
       adjustElementPosition(box);
     }));
+    
   });
 };
