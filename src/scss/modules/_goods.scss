@@ -3,7 +3,7 @@
 
 .goods {
    padding: 60px 0;
-   
+
    @include tablet {
       padding: 40px 0;
    }
@@ -39,15 +39,23 @@
    &__list {
       display: grid;
       grid-template-columns: repeat(auto-fit, 310px);
-     
+
       margin: 0 auto;
 
       justify-content: center;
       gap: 24px 20px;
-      @include mobile{
-      grid-template-columns: repeat(2, minmax(140px, 1fr));
-      column-gap: 14px;
+
+      @include mobile {
+         grid-template-columns: repeat(2, minmax(140px, 1fr));
+         column-gap: 14px;
       }
+   }
+
+   &__no-product {
+      text-align: center;
+      font-size: 24px;
+      color: $green;
+      grid-column: 1/-1;
    }
 
    &__item {}

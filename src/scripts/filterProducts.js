@@ -3,6 +3,7 @@ import { debounce } from './debounce';
 
 export const filterProducts = () => {
   const filterForm = document.querySelector(".filter__form");
+  const goodsTitle = document.querySelector('.goods__title')
 
   const applyFilters = () => {
     const formData = new FormData(filterForm);
@@ -25,6 +26,7 @@ export const filterProducts = () => {
     const target = event.target;
 
     if (target.name === "type") {
+      goodsTitle.textContent = target.labels[0].textContent;
       filterForm.minPrice.value = "";
       filterForm.maxPrice.value = "";
       applyFilters();
