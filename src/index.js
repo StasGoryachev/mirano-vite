@@ -7,12 +7,14 @@ import { store } from "./scripts/Store";
 import { fetchProducts } from "./scripts/APi";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
+import { initSearchProducts } from "./scripts/searchProduct";
 
 const init = () => {
   initHeaderFixed();
   initChoices();
   initChoicesType()
   initCart();
+  initSearchProducts();
   fetchProducts();
   renderProducts();
   filterProducts()

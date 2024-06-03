@@ -1,8 +1,10 @@
 import { fetchProducts } from "./APi";
+import { callBackWithPreload } from "./preload";
 
 export const initSearchProducts = () => {
   const headerForm = document.querySelector(".header__form");
   const goodsTitle = document.querySelector(".goods__title");
+  const goodsSection = document.querySelector(".goods");
 
   headerForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -11,7 +13,7 @@ export const initSearchProducts = () => {
 
     if (searchQuery) {
       goodsTitle.textContent = "Результат поиска";
-      fetchProducts({ search: searchQuery });
+      callBackWithPreload(goodsSection, fetchProducts, { search: searchQuery });
     }
   });
 };
