@@ -1,8 +1,6 @@
-import { store } from "./Store";
+import { productStore } from "./Store";
 
-/*  - `/api/products?type=bouquets`
-  - `/api/products?type=toys`
-  - `/api/products?type=postcards */
+
 
 const formatQueryString = (params) => {
   if (Object.keys(params).length === 0) {
@@ -30,7 +28,7 @@ export const fetchProducts = async (params = {}) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const products = await response.json();
-    store.setProducts(products);
+    productStore.setProducts(products);
   } catch (error) {
     console.error("Ошибка при получении данных");
     return [];
