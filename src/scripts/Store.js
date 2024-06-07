@@ -67,7 +67,7 @@ class CartStore extends Store {
 
   async registerCart() {
     try {
-      const response = await fetch(`${API_URL}/api/register`, {
+      const response = await fetch(`${API_URL}/api/cart/register`, {
         method: "POST",
         credentials: "include",
       });
@@ -88,6 +88,7 @@ class CartStore extends Store {
     try {
       const response = await fetch(`${API_URL}/api/cart`, {
         method: "GET",
+        // куки будут передваться серверу
         credentials: "include",
       });
 
@@ -99,14 +100,14 @@ class CartStore extends Store {
       this.cart = data;
       this.notifyObservers();
     } catch (error) {
-      console.error(error);
+      console.error(`Ошибка при отправке данных: ${error}`);
     }
   }
 
   async postCart({ id, quantity }) {
     try {
-      const response = await fetch(`${API_URL}/api/items`, {
-        method: "GET",
+      const response = await fetch(`${API_URL}/api/cart/items`, {
+        method: "POST",
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -122,11 +123,11 @@ class CartStore extends Store {
       this.cart = data;
       this.notifyObservers();
     } catch (error) {
-      console.error(error);
+      console.error(`Ошибка при отправке данных: ${error}`);
     }
   }
 
-  async addProductCart({ id }) {
+  async addProductCart(id) {
     await this.postCart({ id, quantity: 1 });
   }
 }
