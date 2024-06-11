@@ -1,3 +1,4 @@
+import { renderCart } from "./renderCart";
 import { cartStore } from "./Store";
 const headerCartBtn = document.querySelector(".header__cart-button");
 const cart = document.querySelector(".cart");
@@ -10,9 +11,9 @@ const toggleCart = (e) => {
   }
 };
 
-export const initCart = () => {
-  cartStore.init();
-  //   renderCart();
+export const initCart = async() => {
+   await cartStore.init();
+    renderCart();
 
   headerCartBtn.addEventListener("click", toggleCart);
   cartClose.addEventListener("click", (e) => {
