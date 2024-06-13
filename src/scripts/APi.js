@@ -17,7 +17,9 @@ const formatQueryString = (params) => {
 };
 
 
-export const API_URL = "http://localhost:3000";
+// export const API_URL = "http://localhost:3000";
+// export const API_URL = "https://mirano-api-yyc4.onrender.com";
+export const API_URL = "https://puzzle-torch-elephant.glitch.me";
 
 export const fetchProducts = async (params = {}) => {
   try {

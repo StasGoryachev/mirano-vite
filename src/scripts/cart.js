@@ -11,9 +11,14 @@ const toggleCart = (e) => {
   }
 };
 
-export const initCart = async() => {
-   await cartStore.init();
-    renderCart();
+export const initCart = async () => {
+  await cartStore.init();
+  headerCartBtn.textContent = cartStore.getCart().length;
+  renderCart();
+
+  cartStore.subscribe(() => {
+    headerCartBtn.textContent = cartStore.getCart().length;
+  });
 
   headerCartBtn.addEventListener("click", toggleCart);
   cartClose.addEventListener("click", (e) => {
