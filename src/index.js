@@ -8,6 +8,7 @@ import { fetchProducts } from "./scripts/APi";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
 import { initSearchProducts } from "./scripts/searchProduct";
+import { initOrder } from "./scripts/orderController";
 
 const init = () => {
   initHeaderFixed();
@@ -18,6 +19,7 @@ const init = () => {
   fetchProducts();
   renderProducts();
   filterProducts()
+  initOrder();
 };
 
 init();
