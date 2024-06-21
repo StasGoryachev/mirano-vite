@@ -1,8 +1,21 @@
-const openSelect = () => {};
+const openSelect = () => {
+   const selectWrapper = document.querySelector('.order__select-wrapper');
+   selectWrapper.classList.add('order__select-wrapper_active')
+};
 
-const closeSelect = () => {};
+const closeSelect = () => {
+   const selectWrapper = document.querySelector('.order__select-wrapper');
+   selectWrapper.classList.remove('order__select-wrapper_active')
+};
 
 export const Order = (totalPriceValue) => {
+  const date = new Date();
+  date.setDate(date.getDate() + 1);
+  const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+  const month =
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  const deliveryDate = `${day}.${month}`;
+  console.log(deliveryDate);
   return (
     <div class="order">
       <div class="order__wrapper">
@@ -87,14 +100,16 @@ export const Order = (totalPriceValue) => {
             </div>
 
             <div class="order__delivery">
-              <label for="delivery">Доставка </label>
-              <input type="hidden" name="delivery-date" value="" />
+              <label for="delivery">Доставка {deliveryDate} </label>
+              <input type="hidden" name="delivery-date" value={deliveryDate} />
 
               <div class="order__select-wrapper">
                 <select
                   class="order__select"
                   name="delivery-time"
                   id="delivery"
+                  onFocus={openSelect}
+                  onBlur={closeSelect}
                 >
                   <option value="9-12">с 9:00 до 12:00</option>
                   <option value="12-15">с 12:00 до 15:00</option>
